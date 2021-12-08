@@ -14,7 +14,7 @@ resource "aws_kms_alias" "terraform-monitor-key-alias" {
   target_key_id = aws_kms_key.terraform-monitor-bucket-key-44.key_id
 }
 
-resource "aws_s3_bucket" "terraform-monitor-state" {
+resource "aws_s3_bucket" "terraform-monitor-state-44" {
   bucket = var.s3_bucket
   acl    = "private"
 
@@ -41,7 +41,7 @@ resource "aws_s3_bucket_public_access_block" "block" {
   restrict_public_buckets = true
 }
 
-resource "aws_dynamodb_table" "terraform-monitor-state" {
+resource "aws_dynamodb_table" "terraform-monitor-state-44" {
   name           = var.dynamo_db_table
   read_capacity  = 20
   write_capacity = 20
