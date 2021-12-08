@@ -71,7 +71,7 @@ resource "aws_instance" "deployment" {
 	provisioner "file" {
 
 	source = "/home/ubuntu/docker-compose.yml"
-	destination = "~/docker-compose.yml"
+	destination = "/home/ubuntu/docker-compose.yml"
 	}
 
 	
@@ -121,7 +121,7 @@ connection {
     type        = "ssh"
     host        = self.public_ip
     user        = "ubuntu"
-    private_key = file("~/init/Vinay-key.pem")
+    private_key = file("/init/Vinay-key.pem")
     }	 
 
   tags = {
