@@ -70,7 +70,7 @@ resource "aws_instance" "deployment" {
 
 	provisioner "file" {
 
-	source = "../docker-compose.yml"
+	source = "/home/ubuntu/docker-compose.yml"
 	destination = "~/docker-compose.yml"
 	}
 
