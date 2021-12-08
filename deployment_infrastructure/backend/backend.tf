@@ -15,8 +15,8 @@ resource "aws_kms_alias" "terraform-infra-key-alias" {
  target_key_id = aws_kms_key.terraform-infras-bucket-key-101.key_id
 }
 
-resource "aws_s3_bucket" "terraform-infra-state-55" {
- bucket = "infra-s3-state-55"
+resource "aws_s3_bucket" "terraform-infras-state-55" {
+ bucket = "infras-s3-state-55"
  acl    = "private"
 
  versioning {
@@ -34,7 +34,7 @@ resource "aws_s3_bucket" "terraform-infra-state-55" {
 }
 
 resource "aws_s3_bucket_public_access_block" "block-infra" {
- bucket = aws_s3_bucket.terraform-infra-state-55.id
+ bucket = aws_s3_bucket.terraform-infras-state-55.id
 
  block_public_acls       = true
  block_public_policy     = true
@@ -42,8 +42,8 @@ resource "aws_s3_bucket_public_access_block" "block-infra" {
  restrict_public_buckets = true
 }
 
-resource "aws_dynamodb_table" "terraform-infra-state-55" {
- name           = "terraform-infra-state-55"
+resource "aws_dynamodb_table" "terraform-infras-state-55" {
+ name           = "terraform-infras-state-55"
  read_capacity  = 20
  write_capacity = 20
  hash_key       = "LockID"
