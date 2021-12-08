@@ -108,7 +108,7 @@ Login to your Datadog application and create the API key and APP key.
 * Do the mentioned changes in monitoring/backend, deployment_infrastructure/backend, synthetic-test/backend. Open the variables file edit the bucket name to something unique as AWS needs a unique bucket name globally irrespective of the account.
 * Now go to the deployment_infrastructure/, monitoring/, synthetic-test folder open the state.tf file. Update the S3 name in this file.
 
-### Step 3: Set up the manual integrations for GitHub, AWS.
+### Step 3: Set up the manual integrations for GitHub, AWS  .
 
 #### Integrations for Github
 * Login to the Datadog Dashboard using the credentials created initially.
