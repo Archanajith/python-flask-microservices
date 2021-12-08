@@ -21,7 +21,7 @@ pipeline {
 	stages {
         	stage('Clone') {
             		steps {
-                		git credentialsId: 'GIT_HUB_CREDENTIALS', url: 'https://github.com/vinay-sj/python-flask-microservices'
+                		git credentialsId: 'GIT_HUB_CREDENTIALS', url: 'https://github.com/Archanajith/python-flask-microservices.git'
 			}
 		}
 		stage('Terraform Infrastructure Setup') {
