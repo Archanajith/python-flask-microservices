@@ -1,6 +1,6 @@
 provider "aws" {
   profile = "default"
-  region  = "us-west-1"
+  region  = "us-east-2"
 }
 variable "ingressrules" {
   type    = list(number)
