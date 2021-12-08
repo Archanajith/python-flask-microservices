@@ -98,7 +98,7 @@ resource "aws_instance" "deployment" {
 
 	yes | sudo chmod +x /usr/local/bin/docker-compose
 	# yes | sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-	yes | sudo docker-compose -f ~/docker-compose.yml up -d
+	yes | sudo docker-compose -f /home/ubuntu/docker-compose.yml up -d
 	yes | sudo docker exec -it corder-service flask db init
 	yes | sudo docker exec -it corder-service flask db migrate
 	yes | sudo docker exec -it corder-service flask db upgrade
@@ -121,7 +121,7 @@ connection {
     type        = "ssh"
     host        = self.public_ip
     user        = "ubuntu"
-    private_key = file("/init/Vinay-key.pem")
+    private_key = file("/home/ubuntu/init/Vinay-key.pem")
     }	 
 
   tags = {
