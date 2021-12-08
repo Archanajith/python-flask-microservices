@@ -33,7 +33,7 @@ resource "aws_s3_bucket" "terraform-monitor-state-44" {
 }
 
 resource "aws_s3_bucket_public_access_block" "block" {
-  bucket = aws_s3_bucket.terraform-monitor-state.id
+  bucket = aws_s3_bucket.terraform-monitor-state-44.id
 
   block_public_acls       = true
   block_public_policy     = true
