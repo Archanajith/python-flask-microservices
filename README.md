@@ -1,6 +1,6 @@
 # Final Project Report
 
-* Goal of the project:
+* Goal of the project :
 
 1. Goal of the project was to use an open-source multiple microservices based application and set up CI/CD pipeline using Jenkins, Terraform. 
 2. It also includes monitoring all the components of the project including Github, Jenkins, AWS, Docker using Datadog.
