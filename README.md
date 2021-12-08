@@ -179,6 +179,7 @@ terraform init
 ```angular2html
 terraform apply
 ```
+8. Move the docker-compose.yml file to the Jenkins instance using the scp command mentioned above. This step is mandatory before running the pipeline as it contains the configurations for deployment.
   
 ### Step 5: To activate Jenkins instance
 * Take the public IP from the AWS instance created and access it using ```<publicip>:8080```. This will open the Jenkins instance
