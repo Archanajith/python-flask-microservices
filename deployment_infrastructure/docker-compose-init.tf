@@ -92,12 +92,12 @@ resource "aws_instance" "deployment" {
 
 
 	yes | sudo apt-get update
- yes | sudo apt-get install docker-ce docker-ce-cli containerd.io
+        yes | sudo apt-get install docker-ce docker-ce-cli containerd.io
 	
 	 yes | sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
 	yes | sudo chmod +x /usr/local/bin/docker-compose
-	# yes | sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+	yes | sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 	yes | sudo docker-compose -f /home/ubuntu/docker-compose.yml up -d
 	yes | sudo docker exec -it corder-service flask db init
 	yes | sudo docker exec -it corder-service flask db migrate
@@ -110,6 +110,9 @@ resource "aws_instance" "deployment" {
 	yes | sudo docker exec -it cuser-service flask db init
 	yes | sudo docker exec -it cuser-service flask db migrate
 	yes | sudo docker exec -it cuser-service flask db upgrade
+		
+	yes | sudo curl -i -d "name=prod1&slug=prod1&image=product1.jpg&price=100" -X POST localhost:5002/api/product/create
+        yes | sudo curl -i -d "name=prod2&slug=prod2&image=product2.jpg&price=200" -X POST localhost:5002/api/product/create
 	
 	EOF
 	]
