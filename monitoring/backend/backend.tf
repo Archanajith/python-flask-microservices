@@ -3,15 +3,15 @@ provider "aws"{
   region = var.aws_region
 }
 
-resource "aws_kms_key" "terraform-monitor-bucket-key-10" {
+resource "aws_kms_key" "terraform-monitor-bucket-key-44" {
   description             = "This key is used to encrypt bucket objects"
   deletion_window_in_days = 10
   enable_key_rotation     = true
 }
 
 resource "aws_kms_alias" "terraform-monitor-key-alias" {
-  name          = "alias/terraform-monitor-bucket-key-10"
-  target_key_id = aws_kms_key.terraform-monitor-bucket-key-10.key_id
+  name          = "alias/terraform-monitor-bucket-key-44"
+  target_key_id = aws_kms_key.terraform-monitor-bucket-key-44.key_id
 }
 
 resource "aws_s3_bucket" "terraform-monitor-state" {
@@ -25,7 +25,7 @@ resource "aws_s3_bucket" "terraform-monitor-state" {
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
-        kms_master_key_id = aws_kms_key.terraform-monitor-bucket-key-10.arn
+        kms_master_key_id = aws_kms_key.terraform-monitor-bucket-key-44.arn
         sse_algorithm     = "aws:kms"
       }
     }
