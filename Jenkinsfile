@@ -113,7 +113,7 @@ pipeline {
  				}
  			}	
 		}
-		stage('Dashboard Change Monitoring Infrastructure Setup') {
+		stage('Dashboard Monitoring Infrastructure Setup') {
                          steps {
 				echo 'Starting terraform initialization for S3 bucket creation.'
  				dir('monitoring/backend'){
