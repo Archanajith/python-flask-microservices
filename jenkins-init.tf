@@ -51,9 +51,9 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "jenkins" {
   ami             = data.aws_ami.ubuntu.id
-  instance_type   = "t2.micro"
+  instance_type   = "t2.xlarge"
   security_groups = [aws_security_group.web_traffic.name]
-  key_name        = "cloud-project"
+  key_name        = "Vinay-key"
 
   provisioner "remote-exec" {
     inline = [
@@ -89,7 +89,7 @@ resource "aws_instance" "jenkins" {
     type        = "ssh"
     host        = self.public_ip
     user        = "ubuntu"
-    private_key = file("~/init/cloud-project.pem")
+    private_key = file("~/init/Vinay-key.pem")
   }
 
   tags = {
