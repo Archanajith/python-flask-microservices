@@ -117,15 +117,15 @@ pipeline {
                          steps {
 				echo 'Starting terraform initialization for S3 bucket creation.'
  				dir('monitoring/backend'){
- 					sh ' sudo terraform init -input=false  -reconfigure'
+ 					sh ' sudo  TF_LOG=TRACE terraform init -input=false  -reconfigure'
  				}
 				 echo 'Starting terraform apply for S3 and dynamoDB creation.'
 				 dir('monitoring/backend'){
- 					sh ' sudo terraform apply -input=false -auto-approve=true '
+ 					sh ' sudo  TF_LOG=TRACE terraform apply -input=false -auto-approve=true '
  				}
 				 echo 'Starting terraform initialization.'
 				 dir('monitoring'){
- 					sh ' sudo terraform init -input=false -reconfigure'
+ 					sh ' sudo  TF_LOG=TRACE terraform init -input=false -reconfigure'
  				}
 				 echo 'Starting terraform apply.'
 				 dir('monitoring'){
