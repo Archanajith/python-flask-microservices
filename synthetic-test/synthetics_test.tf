@@ -12,7 +12,6 @@ resource "datadog_monitor" "tfer--monitor_56896696" {
   }
 
   name                 = "One or more AWS regions are experiencing issues"
-  new_group_delay      = "60"
   new_host_delay       = "0"
   no_data_timeframe    = "0"
   notify_audit         = "false"
@@ -43,7 +42,6 @@ resource "datadog_monitor" "tfer--monitor_56897185" {
 
   name                 = "Host{{host.name}}  is running on low memory."
   new_group_delay      = "60"
-  new_host_delay       = "0"
   no_data_timeframe    = "0"
   notify_audit         = "false"
   notify_no_data       = "false"
@@ -72,7 +70,6 @@ resource "datadog_monitor" "tfer--monitor_56897574" {
 
   name                 = "host{{host.ip}}   is not reporting"
   new_group_delay      = "60"
-  new_host_delay       = "0"
   no_data_timeframe    = "5"
   notify_audit         = "false"
   notify_no_data       = "true"
@@ -101,7 +98,6 @@ resource "datadog_monitor" "tfer--monitor_56898012" {
 
   name                 = "{{host.name}}  The EC2 Host is unresponsive"
   new_group_delay      = "60"
-  new_host_delay       = "0"
   no_data_timeframe    = "10"
   notify_audit         = "false"
   notify_no_data       = "true"
@@ -157,7 +153,6 @@ resource "datadog_monitor" "tfer--monitor_56903591" {
 
   name                 = "Service order-service has an abnormal change in errors on env:prod"
   new_group_delay      = "60"
-  new_host_delay       = "0"
   no_data_timeframe    = "0"
   notify_audit         = "false"
   notify_no_data       = "false"
@@ -243,7 +238,6 @@ resource "datadog_monitor" "tfer--monitor_56903889" {
 
   name                 = "Service shop-frontend has an abnormal change in throughput on env:prod"
   new_group_delay      = "60"
-  new_host_delay       = "0"
   no_data_timeframe    = "0"
   notify_audit         = "false"
   notify_no_data       = "false"
